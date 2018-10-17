@@ -76,7 +76,9 @@ function calendarExtender (theInput) {
     this.theCalDiv.appendChild(yearSelect);
     yearSelect.onchange = function () {
       self.selectedDate.setYear(this.value);
-      self.selectDate();
+      if(self.theInput.value){
+        self.selectDate();
+      }
       self.createMonthTable();
       self.theInput.focus();
     };
@@ -88,7 +90,9 @@ function calendarExtender (theInput) {
     this.theCalDiv.appendChild(monthSelect);
     monthSelect.onchange = function () {
       self.selectedDate.setMonth(this.value);
-      self.selectDate();
+      if(self.theInput.value){
+        self.selectDate();
+      }
       self.createMonthTable();
       self.theInput.focus();
     };
